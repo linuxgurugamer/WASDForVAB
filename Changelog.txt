@@ -4,3 +4,4 @@
 	Added deploy.bat and buildRelease.bat
 	Changed default to being active upon initial install
 	updated .gitignore
+	Renamed mod install directory
