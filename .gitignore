@@ -582,5 +582,11 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,csharp
 
-external_dlls/
-wasd_for_vab/WASDForVAB.dll
+.vs/
+bin/
+obj/
+*~
+*.swp
+*.dll
+*.pdb
+*.bak

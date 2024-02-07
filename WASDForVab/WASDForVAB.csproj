@@ -7,24 +7,61 @@
     <ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\external_dlls\Assembly-CSharp.dll</HintPath>
-      <Publicize>true</Publicize>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="SpaceWarp">
-      <HintPath>..\external_dlls\SpaceWarp.dll</HintPath>
-      <Publicize>true</Publicize>
-      <Private>false</Private>
-    </Reference>
     <PackageReference Include="UnityEngine.Modules" Version="2020.3.33" />
     <PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
     <PackageReference Include="HarmonyX" Version="2.10.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="$(KSP_2_DIR)\KSP2_x64_Data\Managed\Assembly*.dll">
+	   <Private>False</Private>
+    </Reference>
+    <Reference Include="$(KSP_2_DIR)\BepInEx\plugins\SpaceWarp\*.dll">
+	   <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.ARModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.ContentLoadModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.NVIDIAModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.PropertiesModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.SpatialTracking.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.TestRunner.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.UI.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="S:\SteamLibrary\steamapps\common\Kerbal Space Program 2\KSP2_x64_Data\Managed\UnityEngine.XR.LegacyInputHelpers.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+
+  </ItemGroup>
+  <PropertyGroup />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set KSP_2_DIR=$(KSP_2_DIR)&#xD;&#xA;&#xD;&#xA;IF &quot;%25KSP_2_DIR%25&quot;==&quot;&quot; (&#xD;&#xA;&#xD;&#xA; ECHO Configuration error - KSP_2_DIR not specified in project.&#xD;&#xA;&#xD;&#xA; ECHO  set KSP_2_DIR environment variable &#xD;&#xA; &#xD;&#xA; PAUSE&#xD;&#xA;&#xD;&#xA; GOTO DONE&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;start /D $(SolutionDir) /WAIT deploy.bat  $(TargetDir) $(TargetFileName) $(TargetName)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) == Release ( &#xD;&#xA;&#xD;&#xA; start /D $(SolutionDir) /WAIT buildRelease.bat $(TargetDir) $(TargetFileName) $(TargetName)&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;" />
+  </Target>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(DevEnvDir)\texttransform.exe&quot; &quot;$(ProjectDir)AssemblyVersion.tt&quot;" />
+  </Target>
   <PropertyGroup>
-    <PostBuildEvent>
-      copy /Y "$(SolutionDir)WASDForVAB\bin\Debug\net472\WASDForVAB.dll" "$(SolutionDir)wasd_for_vab/WASDForVAB.dll"
-      copy /Y "$(SolutionDir)WASDForVAB\bin\Debug\net472\WASDForVAB.pdb" "$(SolutionDir)wasd_for_vab/WASDForVAB.pdb"
-    </PostBuildEvent>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 </Project>

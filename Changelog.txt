@@ -1,0 +1,6 @@
+0.4.0
+	Adoption by Linuxgurugamer
+	Added AssemblyVersion.tt to automatically add version info to dll from swinfo.json
+	Added deploy.bat and buildRelease.bat
+	Changed default to being active upon initial install
+	updated .gitignore

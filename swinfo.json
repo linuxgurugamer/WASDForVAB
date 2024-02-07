@@ -1,10 +1,10 @@
 {
     "mod_id": "wasd_for_vab",
-    "author": "ArchLinus",
+    "author": "ArchLinus,Linuxgurugamer",
     "name": "WASD For VAB",
     "description": "Converts VAB camera to a WASD flycam",
-    "source": "https://github.com/ArchLinus/WASDForVAB",
-    "version": "0.3.0",
+    "source": "https://github.com/linuxgurugamer/WASDForVAB",
+    "version": "0.4.0",
     "dependencies": [],
     "ksp2_version": {
         "min": "0.1.0",

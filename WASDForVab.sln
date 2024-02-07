@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASDForVab", "WASDForVab\WASDForVab.csproj", "{E24823A2-0408-441B-922E-7DAA53C8A516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASDForVab", "WASDForVab\WASDForVab.csproj", "{E24823A2-0408-441B-922E-7DAA53C8A516}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE9581FB-EA31-4EE7-83C7-4FE36A3D87E4}"
+	ProjectSection(SolutionItems) = preProject
+		buildRelease.bat = buildRelease.bat
+		Changelog.txt = Changelog.txt
+		deploy.bat = deploy.bat
+		installmod.ps1 = installmod.ps1
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+		swinfo.json = swinfo.json
+		TODO.txt = TODO.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

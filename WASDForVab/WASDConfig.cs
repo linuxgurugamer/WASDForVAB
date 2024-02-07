@@ -26,7 +26,7 @@ public class WASDConfig
         BaseSpeed = Config.Bind("Settings", "Base Speed", 20.0f);
         FastSpeedMultiplier = Config.Bind("Settings", "Fast Speed Multiplier", 3.0f);
         SlowSpeedMultiplier = Config.Bind("Settings", "Slow Speed Multiplier", 0.4f);
-        RequireRightClickForControl = Config.Bind("Settings", "Require Right Click For Control", true);
+        RequireRightClickForControl = Config.Bind("Settings", "Require Right Click For Control", false);
         KeyToggleEnabled = Config.Bind("Settings", "Key Toggle Enabled", new KeyboardShortcut(KeyCode.W, KeyCode.LeftAlt));
         KeyForward = Config.Bind("Settings", "Key Forward", KeyCode.W);
         KeyLeft = Config.Bind("Settings", "Key Left", KeyCode.A);
