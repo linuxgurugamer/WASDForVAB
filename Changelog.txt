@@ -1,5 +1,37 @@
+0.1
+	Released on 2023-02-28
+	Initial release
+
+0.1.1
+	Released on 2023-02-28
+	No changes listed
+
+0.1.2
+	Released on 2023-03-01
+	Fixed mod loading issues on new saves
+	Added a way to toggle the mod on/off using alt+w
+	Fixed conflict with ctrl+a binding
+
+0.2.0
+	Released on 2023-03-01
+	Port the mod to use SpaceWarp instead of BepInEx
+	Add camera configuration options
+	Fix mod breaking after quitting to main menu and returning to VAB
+
+0.2.1
+	Released on 2023-03-03
+	Add keybinds to mod configuration (thanks to Falki!)
+	Add an optional slow toggle keybind
+
+0.3.0
+	Released on 2023-03-06
+
+	No changelog provided
+
 0.4.0
+	Released on 2024-02-07	
 	Adoption by Linuxgurugamer
+	Added Changelog, pulled info from previous versions on spacedock
 	Added AssemblyVersion.tt to automatically add version info to dll from swinfo.json
 	Added deploy.bat and buildRelease.bat
 	Changed default to being active upon initial install
